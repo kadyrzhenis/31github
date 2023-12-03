@@ -1,31 +1,47 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+
 using namespace std;
-typedef long long ll;
-#define Do()   ios_base::sync_with_stdio(false); cin.tie(0);
-void solve()
-{
-    long long a,b,c,d;
-    cin >> a>>b;
-    cin >>c>>d;
-    ll k = max(a,b)*max(c,d)-min(a,b)*min(c,d);
-    ll m = a+b+c+d;
-    if(k==0){
-        cout<<"-1"<<endl;
-    }else{
-        if(m%k==0){
-            cout<<m/k<<endl;
-        }else{
-            cout<<(m/k) + 1<<endl;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> cowboy(n);
+    vector<int> winning(n);
+    map<int, int> remaining_cards;
+
+    for (int i = 0; i < n; i++) {
+        cin >> cowboy[i];
+        remaining_cards[cowboy[i]]++;
+    }
+
+    for (int i = 0; i < n; i++) {
+        cin >> winning[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (cowboy[i] == winning[i]) {
+            remaining_cards[cowboy[i]]--;
+            if (remaining_cards[cowboy[i]] == 0) {
+                remaining_cards.erase(cowboy[i]);
+            }
+        } else {
+            auto it = remaining_cards.lower_bound(winning[i]);
+            if (it == remaining_cards.begin()) {
+                cout << "NO" << endl;
+                return 0;
+            }
+            it--;
+            int card = it->first;
+            remaining_cards[card]--;
+            if (remaining_cards[card] == 0) {
+                remaining_cards.erase(card);
+            }
         }
     }
-    
-    
-}
-int main()
-{
-    Do() int t = 1;
-    while (t--)
-    {
-        solve();
-    }
+
+    cout << "YES" << endl;
+
+    return 0;
 }
