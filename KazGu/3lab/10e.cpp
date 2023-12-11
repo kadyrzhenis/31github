@@ -3,6 +3,8 @@
 using namespace std;
 int main ()
 {
+
+ 
  double a,b, eps,an;
  double m = 0.445;
  cout<<"Введите значения аргумента и точности\n";
@@ -11,6 +13,7 @@ int main ()
  double F = an;
  int n=3;
  while (fabs(an)>=eps)
+  
  {
  an*= ((b)*(n-2))/((2*a+b)*(2*a+b)*n);
  F+=an;
