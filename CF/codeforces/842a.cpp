@@ -7,16 +7,16 @@ int main()
     long long int a = r;
     long long int b = x;
     bool f = false;
-    while((a <= r && a >= l) && (b <= y && b >= x))
+    while ((a <= r && a >= l) && (b <= y && b >= x))
     {
-        if((b * k) >= l && (b * k) <= r)
+        if ((b * k) >= l && (b * k) <= r)
         {
             f = true;
             break;
         }
         b++;
     }
-    if(f)
+    if (f)
     {
         std::cout << "YES" << endl;
     }
