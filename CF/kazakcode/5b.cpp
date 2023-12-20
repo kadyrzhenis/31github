@@ -6,15 +6,15 @@ typedef long long ll;
     cin.tie(0);
 void solve()
 {
-    int n,m;
-    cin >> n>>m;
-    long long res=1;
-    int index = n-m;
-    for (int i = index+1; i <= n; i++)
+    int n, m;
+    cin >> n >> m;
+    long long res = 1;
+    int index = n - m;
+    for (int i = index + 1; i <= n; i++)
     {
-       res=res*i;
+        res = res * i;
     }
-    
+
     cout << res << endl;
 }
 int main()
