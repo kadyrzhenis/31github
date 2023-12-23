@@ -1,5 +1,4 @@
 lst = []
-
 for i in range(0, 12):
     ele = int(input("150 мен 200 арасындағы кез келген сан енгіз : "))
     lst.append(ele) 

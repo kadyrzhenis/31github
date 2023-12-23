@@ -19,6 +19,8 @@ int main(){
         D.push_back(sum);
         sum = 0;
     }
+
+    
     for (int i = 0; i < D.size();++i){
         cout << D[i] << " ";
     }

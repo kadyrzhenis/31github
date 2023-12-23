@@ -3,7 +3,8 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 #define all(v) v.begin(), v.end()
-#define Do()        ios_base::sync_with_stdio(false); cin.tie(0);
+#define Do()    ios_base::sync_with_stdio(false); cin.tie(0);
+
 void solve()
 {
     vector<int>v;
