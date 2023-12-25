@@ -10,35 +10,45 @@ void solve()
 {
     vector<int> v;
     int n;
-    cin>>n;
-    int arr[n][n],res[n][n];
-    for(int i=0;i<n;++i){
-        for(int j=0;j<n;++j){
-            cin>>arr[i][j];
-            res[j][i]=arr[i][j];
+    cin >> n;
+    int arr[n][n];
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < n; ++j)
+        {
+            cin >> arr[i][j];
         }
     }
-    int rs=0;
-    for(int i=0;i<n;++i){
-        int cnt=0;
-        int k=0;
-        for(int j=0;j<n;++j){
+    int rs = 0;
+    for (int i = 0; i < n; ++i)
+    {
+
+        for (int j = 0; j < n; ++j)
+        {
+            int cnt = 0;
             int ch = arr[i][j];
-            if(k<n && k!=j){
-               if(ch<=arr[i][k] && ch>=res[i][k]){
-                k++;
-            }else{
-                cnt++;
-                break;
+            for (int k = 0; k < n; ++k)
+            {
+                if (k != j)
+                {
+                    if (ch <= arr[i][k] && ch >= arr[k][j])
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        cnt++;
+                        break;
+                    }
+                }
             }
+            if (cnt == 0)
+            {
+                rs++;
             }
-             if(cnt==0){
-           rs++;
-        }
-            
         }
     }
-    cout<<rs<<endl;
+    cout << rs << endl;
 }
 int main()
 {
