@@ -17,6 +17,7 @@ int main(){
             arr[k] = sin(arr[k]);
         }
     }
+    
     cout << "Kolichestvo nuleh = " << zero << "\n";
     for (int i = 0; i < n;i++){
         cout <<"sinus chisel, vkhodyashchikh v diapazon [-15..15] = arr["<<i<<"]="<<arr[i]<<endl;
